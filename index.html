@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEHAMMER</title>
+    <style>
+        body {
+            font-family: monospace;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        h1 {
+            text-transform: uppercase;
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div id="home" class="page active">
+        <h1>APEHAMMER</h1>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="showPage('art')">Art</a></li>
+            <li><a href="https://audius.co/apehammer/albums" target="_blank">Music</a></li>
+            <li><a href="javascript:void(0)">WRITING (COMING SOON)</a></li>
+            <li><a href="javascript:void(0)" onclick="showPage('about')">About</a></li>
+        </ul>
+    </div>
+
+    <div id="art" class="page">
+        <h1>Art</h1>
+        <ul>
+            <li><a href="https://foundation.app/collection/tpto" target="_blank">ON-CHAIN ART</a></li>
+            <li><a href="https://opensea.io/apehammer/created" target="_blank">OTHER STUFF</a></li>
+        </ul>
+        <a href="javascript:void(0)" onclick="showPage('home')" class="back-link">← Back to Home</a>
+    </div>
+
+    <div id="about" class="page">
+        <h1>About</h1>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+            <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus.</p>
+        </div>
+        <a href="javascript:void(0)" onclick="showPage('home')" class="back-link">← Back to Home</a>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(function(page) {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
